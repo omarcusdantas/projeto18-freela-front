@@ -92,7 +92,7 @@ export default function LoginPage() {
                     {isDisabled ? <ThreeDots height="13px" color="#ffffff" /> : "Login"}
                 </button>
                 <Link to="/signup">
-                    Don't have an account? Sign up!
+                    Don't have an account? Signup!
                 </Link>
             </form>
         </LoginContainer>

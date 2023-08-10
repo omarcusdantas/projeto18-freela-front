@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LoginContainer = styled.div`
-    height: 667px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,7 @@ export const LoginContainer = styled.div`
     }
 
     form {
-        height: 300px;
+        min-height: 447px;
         display: flex;
         flex-direction: column;
         gap: 6px;
