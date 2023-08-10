@@ -110,7 +110,7 @@ export const PageContainer = styled.div`
 
 export const Main = styled.div`
     width: 100%;
-    max-width: 935px;
+    max-width: 700px;
     margin-top: 92px;
     margin-bottom: 115px;
     padding: 0 15px;
