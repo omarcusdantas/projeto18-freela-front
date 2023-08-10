@@ -6,6 +6,7 @@ import TopBar from "../components/TopBar/TopBar";
 import LoadingScreen from "../components/LoadingScreen";
 import { UserContext } from "../UserContext";
 import { useNavigate } from "react-router-dom";
+import Service from "../components/Service/Service";
 
 export default function ServicesPage() {
     const { userData } = useContext(UserContext);
@@ -54,7 +55,7 @@ export default function ServicesPage() {
                         <Title>
                             <h2>Get a service today!</h2>
                         </Title>
-                        {/*<Container>
+                        <Container>
                             {services.length === 0 ? (
                                 <p>No services available</p>
                             ) : (
@@ -66,7 +67,7 @@ export default function ServicesPage() {
                                     />
                                 ))
                             )}
-                        </Container>*/}
+                        </Container>
                     </>
                 )}
             </Main>
