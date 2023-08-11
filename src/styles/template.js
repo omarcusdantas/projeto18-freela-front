@@ -94,7 +94,7 @@ export const LoginContainer = styled.div`
 
     #check-password {
         background-color: ${(props) => {
-            if (!props.rightPassword) {
+            if (!props.$rightPassword) {
                 return "#F9C0C0";
             }
         }};

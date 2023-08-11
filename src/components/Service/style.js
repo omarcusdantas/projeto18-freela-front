@@ -13,7 +13,7 @@ export const Container = styled.div`
     gap: 40px;
     align-items: center;
     justify-content: ${(props) => {
-        if (props.private) {
+        if (props.$private) {
             return "center";
         }
         return "start";
@@ -35,6 +35,16 @@ export const Container = styled.div`
     div:nth-child(4) {
         width: 100%;
         text-align: center;
+    }
+
+    > button {
+        background-color: transparent;
+        font-size: 20px;
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        cursor: pointer;
+        border: none;
     }
 `;
 
@@ -58,7 +68,7 @@ export const Check = styled.button`
     align-items: center;
 
     background-color: ${(props) => {
-        if (props.active) {
+        if (props.$active) {
             return "#8FC549";
         }
         return "#EBEBEB";
@@ -66,7 +76,7 @@ export const Check = styled.button`
 
     border: 1px solid
         ${(props) => {
-            if (props.active) {
+            if (props.$active) {
                 return "#8FC549";
             }
             return "#E7E7E7";

@@ -16,7 +16,7 @@ export default function MyServicesPage() {
     const [pageLoading, setPageLoading] = useState(true);
     const navigate = useNavigate();
 
-    function getServices() {
+    function getServices(setIsWaiting) {
         axios
             .get(`${import.meta.env.VITE_API_URL}/services/mine`, {
                 headers: { Authorization: `Bearer ${userData.token}` },
@@ -25,6 +25,11 @@ export default function MyServicesPage() {
                 if (pageLoading) {
                     setPageLoading(false);
                 }
+
+                if (setIsWaiting) {
+                    setIsWaiting(false);
+                }
+                
                 setServices(response.data);
             })
             .catch((error) => {
@@ -61,8 +66,9 @@ export default function MyServicesPage() {
                         {   
                             isAddService &&
                             <AddService 
-                                toggleAddHabit={setIsAddService} 
+                                toggleAddService={setIsAddService} 
                                 token={userData.token}
+                                updateServices={getServices}
                             />
                         }
                         <Container>
@@ -75,6 +81,7 @@ export default function MyServicesPage() {
                                         info={dailyHabit}
                                         token={userData.token}
                                         type="private"
+                                        updateServices={getServices}
                                     />
                                 ))
                             )}

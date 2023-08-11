@@ -7,9 +7,8 @@ export default function Menu() {
     return (
         <MenuBar>
             <MenuContainer>
-                <StyledLink to="/categories" isActive={location.pathname === '/categories'}>Categories</StyledLink>
-                <StyledLink to="/services" isActive={location.pathname === '/services'}>Services</StyledLink>
-                <StyledLink to="/my-services" isActive={location.pathname === '/my-services'}>My Services</StyledLink>
+                <StyledLink to="/services" $isActive={location.pathname === '/services'}>Services</StyledLink>
+                <StyledLink to="/my-services" $isActive={location.pathname === '/my-services'}>My Services</StyledLink>
             </MenuContainer>
         </MenuBar>
     );
@@ -30,10 +29,11 @@ const MenuContainer = styled.div`
     width: 400px;
     padding: 0 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
     text-align: center;
+    gap: 30px;
 `;
 
 const StyledLink = styled(Link)`
@@ -42,13 +42,13 @@ const StyledLink = styled(Link)`
     font-size: 18px;
     color: #ffffff;
     text-decoration: none;
-    background-color: ${props => (props.isActive ? "#857cff" : "#52b6ff")};
+    background-color: ${props => (props.$isActive ? "#857cff" : "#52b6ff")};
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
-    transform: translateY(${props => (props.isActive ? "-40px" : "-20px")});
+    transform: translateY(${props => (props.$isActive ? "-40px" : "-20px")});
     
     &:hover {
-        background-color: ${props => (props.isActive ? "#52b6ff" : "#ffffff")};
-        color: ${props => (props.isActive ? "#ffffff" : "#52b6ff")};
+        background-color: ${props => (props.$isActive ? "#52b6ff" : "#ffffff")};
+        color: ${props => (props.$isActive ? "#ffffff" : "#52b6ff")};
     }
 `;

@@ -88,7 +88,7 @@ export default function RegisterPage() {
             schemaSignup.validateSync(data, { abortEarly: false });
         } catch (validationError) {
             const errors = validationError.errors;
-            return alert(errors);
+            return alert(errors.join("\n"));
         }
         
         setIsDisabled(true);
@@ -124,8 +124,8 @@ export default function RegisterPage() {
     }
 
     return (
-        <LoginContainer rightPassword={rightPassword}>
-            <img src={logo} alt="TrackIt" />
+        <LoginContainer $rightPassword={rightPassword}>
+            <img src={logo} alt="SkillHarbor" />
             <form onSubmit={handleForm}>
                 <input 
                     type="text" 
@@ -151,8 +151,8 @@ export default function RegisterPage() {
                         placeholder="ddd" 
                         ref={inputRefDDD} 
                         disabled={isDisabled} 
-                        name="phone"
-                        pattern="[0-9]{2}"
+                        name="ddd"
+                        maxLength={2}
                         required
                     />
                     <input 
@@ -161,7 +161,7 @@ export default function RegisterPage() {
                         ref={inputRefPhone} 
                         disabled={isDisabled} 
                         name="phone"
-                        pattern="[0-9]{9}"
+                        maxLength={9}
                         required
                     />
                 </DoubleInput>
@@ -172,7 +172,7 @@ export default function RegisterPage() {
                     value={inputCep}
                     disabled={isDisabled} 
                     name="cep"
-                    pattern="[0-9]{8}"
+                    maxLength={8}
                     required
                 />
                 <DoubleInput>

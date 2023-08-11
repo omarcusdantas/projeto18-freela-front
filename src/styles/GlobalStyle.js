@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Lexend Deca", sans-serif;
     }
 
-    input {
+    input, select, option {
         font-family: "Lexend Deca", sans-serif;
         color: #666666;
     }

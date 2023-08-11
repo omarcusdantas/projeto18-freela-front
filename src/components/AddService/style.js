@@ -7,7 +7,7 @@ export const Container = styled.form`
     max-width: 700px;
     margin: 20px auto;
 
-    input {
+    input, select, textarea {
         font-size: 20px;
         width: 100%;
         height: 45px;
@@ -19,6 +19,14 @@ export const Container = styled.form`
         &::placeholder {
             color: #dbdbdb;
         }
+    }
+
+    textarea {
+        min-height: 100px;
+        padding: 10px;
+        max-height: 100px;
+        min-width: 100%;
+        max-width: 100%;
     }
 `;
 
