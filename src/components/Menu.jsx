@@ -7,7 +7,7 @@ export default function Menu() {
     return (
         <MenuBar>
             <MenuContainer>
-                <StyledLink to="/services" $isActive={location.pathname === '/services'}>Services</StyledLink>
+                <StyledLink to="/services" $isActive={location.pathname === '/services'}>Get Services</StyledLink>
                 <StyledLink to="/my-services" $isActive={location.pathname === '/my-services'}>My Services</StyledLink>
             </MenuContainer>
         </MenuBar>
@@ -37,7 +37,7 @@ const MenuContainer = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-    width: 116px;
+    width: 160px;
     padding: 15px 5px;
     font-size: 18px;
     color: #ffffff;
