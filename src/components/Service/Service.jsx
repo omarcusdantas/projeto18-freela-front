@@ -6,11 +6,13 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
 
 export default function Service(props) {
     const { info, type, updateServices, token } = props;
     const [isWaiting, setIsWaiting] = useState(false);
     const MySwal = withReactContent(Swal);
+    const navigate = useNavigate();
 
     function handleStatus() {
         setIsWaiting(true);
@@ -87,8 +89,14 @@ export default function Service(props) {
         });
     }
 
+    function handleClick() {
+        if (type !== "private") {
+            navigate(`/service/${info.id}`);
+        }
+    }
+
     return (
-        <Container $private={type==="private"}>
+        <Container $private={type==="private"} onClick={handleClick} tabIndex="0">
             <img src={info.image} />
             <Text>
                 <h3>{info.title}</h3>
@@ -115,8 +123,8 @@ export default function Service(props) {
                         <div>
                             <p>{info.description}</p>
                         </div>
-                        <button onClick={confirmDeleteService}>
-                            <FaRegTrashCan />
+                        <button id="deleteButton" onClick={confirmDeleteService}>
+                            <FaRegTrashCan id="deleteButtonImg"/>
                         </button>
                     </>
                 ) : null}

@@ -8,7 +8,7 @@ import { UserContext } from "../UserContext";
 import { useNavigate } from "react-router-dom";
 import Service from "../components/Service/Service";
 import { styled } from "styled-components";
-import brazilianStates from "../states";
+import brazilianStates from "../brazilianStates";
 
 export default function ServicesPage() {
     const { userData } = useContext(UserContext);

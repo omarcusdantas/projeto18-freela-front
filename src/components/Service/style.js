@@ -12,12 +12,21 @@ export const Container = styled.div`
     flex-wrap: wrap;
     gap: 40px;
     align-items: center;
+    text-align: left;
+
     justify-content: ${(props) => {
         if (props.$private) {
             return "center";
         }
         return "start";
-    }};;
+    }};
+
+    cursor: ${(props) => {
+        if (props.$private) {
+            return "default";
+        }
+        return "pointer";
+    }};
 
     h3 {
         color: #666666;
@@ -45,6 +54,16 @@ export const Container = styled.div`
         right: 8px;
         cursor: pointer;
         border: none;
+    }
+
+    @media (max-width: 460px) {
+        text-align: center;
+        justify-content: center;
+        gap: 20px;
+
+        div p {
+            text-align: center;
+        }
     }
 `;
 
