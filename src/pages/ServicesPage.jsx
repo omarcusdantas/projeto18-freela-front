@@ -14,7 +14,7 @@ export default function ServicesPage() {
     const { userData } = useContext(UserContext);
     const [services, setServices] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [pageLoading, setPageLoading] = useState(true);
+    const [pageLoading, setPageLoading] = useState(false);
     const filterCategory = useRef(null);
     const filterUF = useRef(null);
     const navigate = useNavigate();
@@ -54,15 +54,14 @@ export default function ServicesPage() {
     }
 
     function getServices() {
+        setPageLoading(true);
         const url = getUrl();
         axios
             .get(`${import.meta.env.VITE_API_URL}${url}`, {
                 headers: { Authorization: `Bearer ${userData.token}` },
             })
             .then((response) => {
-                if (pageLoading) {
-                    setPageLoading(false);
-                }
+                setPageLoading(false);
                 setServices(response.data);
             })
             .catch((error) => {
